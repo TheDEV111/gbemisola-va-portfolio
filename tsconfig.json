@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    /* Language & Environment */
+    "target": "ES2022",
+    "lib": ["dom", "dom.iterable", "ES2022"],
+    "jsx": "preserve",
+
+    /* Module Resolution */
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "allowJs": false,
+
+    /* Path Aliases */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/features/*": ["./src/features/*"],
+      "@/core/*": ["./src/core/*"],
+      "@/shared/*": ["./src/shared/*"],
+      "@/app/*": ["./src/app/*"]
+    },
+
+    /* Strict Type Checking */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": true,
+    "noPropertyAccessFromIndexSignature": true,
+
+    /* Emit */
+    "noEmit": true,
+    "incremental": true,
+
+    /* Interop */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+
+    /* Next.js */
+    "plugins": [{ "name": "next" }],
+    "skipLibCheck": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules", ".next", "out", "dist", "coverage"]
+}
