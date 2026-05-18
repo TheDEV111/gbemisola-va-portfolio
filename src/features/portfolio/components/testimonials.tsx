@@ -4,10 +4,14 @@ import { Quote } from "lucide-react";
 
 import { cn } from "@/shared/utils/cn";
 
-import { TESTIMONIALS } from "../data/content";
 import { useInView } from "../hooks/use-in-view";
+import type { TestimonialEntry } from "../types";
 
-export function Testimonials() {
+interface TestimonialsProps {
+  items: TestimonialEntry[];
+}
+
+export function Testimonials({ items }: TestimonialsProps) {
   const { ref: sectionRef, isInView } = useInView();
 
   return (
@@ -52,7 +56,7 @@ export function Testimonials() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-          {TESTIMONIALS.map((t, i) => (
+          {items.map((t, i) => (
             <div
               key={t.name}
               className={cn(

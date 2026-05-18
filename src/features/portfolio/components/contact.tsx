@@ -8,6 +8,11 @@ import { cn } from "@/shared/utils/cn";
 
 import { OWNER } from "../data/content";
 import { useInView } from "../hooks/use-in-view";
+import type { AvailabilityData } from "../types";
+
+interface ContactProps {
+  availability: AvailabilityData;
+}
 
 interface FormState {
   name: string;
@@ -16,7 +21,7 @@ interface FormState {
   message: string;
 }
 
-export function Contact() {
+export function Contact({ availability }: ContactProps) {
   const { ref: sectionRef, isInView } = useInView();
   const [form, setForm] = useState<FormState>({
     name: "",
@@ -201,15 +206,20 @@ export function Contact() {
               <div className="mb-3 flex items-center gap-2">
                 <span
                   className="h-2 w-2 rounded-full"
-                  style={{ background: "#4ade80", boxShadow: "0 0 8px #4ade80" }}
+                  style={{
+                    background: availability.isAvailable ? "#4ade80" : "#f87171",
+                    boxShadow: availability.isAvailable ? "0 0 8px #4ade80" : "0 0 8px #f87171",
+                  }}
                 />
-                <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#4ade80" }}>
-                  Currently Available
+                <span
+                  className="text-xs font-semibold uppercase tracking-widest"
+                  style={{ color: availability.isAvailable ? "#4ade80" : "#f87171" }}
+                >
+                  {availability.isAvailable ? "Currently Available" : "Not Available"}
                 </span>
               </div>
               <p className="text-sm leading-relaxed" style={{ color: "var(--pf-muted)" }}>
-                Open to freelance contracts, part-time retainers, and full-time remote
-                VA roles. Response time is typically under 24 hours.
+                {availability.description}
               </p>
             </div>
           </div>

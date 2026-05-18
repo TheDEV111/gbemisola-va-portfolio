@@ -6,7 +6,12 @@ import { ArrowDown } from "lucide-react";
 
 import { OWNER } from "../data/content";
 
-export function Hero() {
+interface HeroProps {
+  tagline: string;
+  subTagline: string;
+}
+
+export function Hero({ tagline, subTagline }: HeroProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -121,7 +126,7 @@ export function Hero() {
             transition: "opacity 0.9s ease 0.42s, transform 0.9s ease 0.42s",
           }}
         >
-          {OWNER.tagline}
+          {tagline}
         </p>
 
         {/* Sub-tagline */}
@@ -135,8 +140,7 @@ export function Hero() {
             transition: "opacity 0.9s ease 0.52s, transform 0.9s ease 0.52s",
           }}
         >
-          Five years in healthcare operations, government logistics, and pharmaceutical
-          administration — now channelled into keeping your business ruthlessly organised.
+          {subTagline}
         </p>
 
         {/* CTAs */}

@@ -2,10 +2,14 @@
 
 import { cn } from "@/shared/utils/cn";
 
-import { EXPERIENCE } from "../data/content";
 import { useInView } from "../hooks/use-in-view";
+import type { ExperienceEntry } from "../types";
 
-export function Experience() {
+interface ExperienceProps {
+  jobs: ExperienceEntry[];
+}
+
+export function Experience({ jobs }: ExperienceProps) {
   const { ref: sectionRef, isInView } = useInView();
 
   return (
@@ -49,7 +53,7 @@ export function Experience() {
           />
 
           <div className="flex flex-col gap-8">
-            {EXPERIENCE.map((job, i) => (
+            {jobs.map((job, i) => (
               <div
                 key={`${job.role}-${job.period}`}
                 className={cn("pf-reveal lg:pl-12", isInView && "in-view")}

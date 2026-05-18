@@ -1,0 +1,37 @@
+groups:
+  - category: Productivity & Communication
+    tools:
+      - Google Workspace
+      - Gmail
+      - Google Drive
+      - Google Docs
+      - Google Sheets
+      - Google Slides
+      - Google Calendar
+      - Microsoft Outlook
+      - Microsoft Word
+      - Microsoft Excel
+      - Microsoft PowerPoint
+  - category: Operations & Data
+    tools:
+      - Electronic Medical Records (EMR)
+      - Inventory Management Software
+      - Point-of-Sale (POS) Systems
+      - Digital Dashboards
+      - Supply Chain Documentation
+      - Cold Chain Compliance
+  - category: AI & Emerging Tools
+    tools:
+      - AI Productivity Tools
+      - Prompt Engineering
+      - AI-assisted Research
+      - Workflow Automation
+  - category: Soft Skills
+    tools:
+      - Stakeholder Communication
+      - Report Writing
+      - Minute-taking
+      - Agenda Preparation
+      - Cross-functional Coordination
+      - Problem-solving
+      - Discretion & Confidentiality

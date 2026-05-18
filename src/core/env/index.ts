@@ -18,6 +18,11 @@ const envSchema = z.object({
   /* Auth — not required for portfolio deployment */
   AUTH_SECRET: z.string().min(32).optional(),
   AUTH_TOKEN_EXPIRY_SECONDS: z.coerce.number().positive().default(3600),
+
+  /* Keystatic CMS — required in production for GitHub storage mode */
+  KEYSTATIC_GITHUB_CLIENT_ID: z.string().optional(),
+  KEYSTATIC_GITHUB_CLIENT_SECRET: z.string().optional(),
+  KEYSTATIC_SECRET: z.string().optional(),
 });
 
 /* ------------------------------------------------------------------ */

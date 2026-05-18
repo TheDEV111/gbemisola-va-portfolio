@@ -2,10 +2,14 @@
 
 import { cn } from "@/shared/utils/cn";
 
-import { SKILLS } from "../data/content";
 import { useInView } from "../hooks/use-in-view";
+import type { SkillGroup } from "../types";
 
-export function Skills() {
+interface SkillsProps {
+  groups: SkillGroup[];
+}
+
+export function Skills({ groups }: SkillsProps) {
   const { ref: sectionRef, isInView } = useInView();
 
   return (
@@ -41,7 +45,7 @@ export function Skills() {
         </div>
 
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {SKILLS.map((group, gi) => (
+          {groups.map((group, gi) => (
             <div
               key={group.category}
               className={cn("pf-reveal", isInView && "in-view")}
