@@ -28,7 +28,7 @@ export function WhyHire() {
           className={cn("pf-reveal mb-16 text-center", isInView && "in-view")}
           style={{ transitionDelay: "0ms" }}
         >
-          <p className="pf-section-label mb-4">06 ─ Why Work With Me</p>
+          <p className="pf-section-label mb-4">06 · Why Work With Me</p>
           <h2
             className="pf-serif leading-tight"
             style={{

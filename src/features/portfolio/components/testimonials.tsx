@@ -44,7 +44,7 @@ export function Testimonials({ items }: TestimonialsProps) {
           className={cn("pf-reveal mb-16 text-center", isInView && "in-view")}
           style={{ transitionDelay: "0ms" }}
         >
-          <p className="pf-section-label mb-4">05 ─ Testimonials</p>
+          <p className="pf-section-label mb-4">05 · Testimonials</p>
           <h2
             className="pf-serif leading-tight"
             style={{

@@ -87,7 +87,7 @@ export function Contact({ availability }: ContactProps) {
           className={cn("pf-reveal mb-16 text-center", isInView && "in-view")}
           style={{ transitionDelay: "0ms" }}
         >
-          <p className="pf-section-label mb-4">07 ─ Get In Touch</p>
+          <p className="pf-section-label mb-4">07 · Get In Touch</p>
           <h2
             className="pf-serif leading-tight"
             style={{
@@ -115,7 +115,7 @@ export function Contact({ availability }: ContactProps) {
                 style={{ color: "var(--pf-muted)" }}
               >
                 Whether you&rsquo;re looking for a dedicated VA, short-term project support, or
-                just want to explore how I could help — I&rsquo;d love to hear from you.
+                just want to explore how I could help. I&rsquo;d love to hear from you.
               </p>
 
               <div className="flex flex-col gap-5">
@@ -327,7 +327,7 @@ export function Contact({ availability }: ContactProps) {
                   type="submit"
                   className="pf-btn-primary mt-2 w-full rounded-xl py-4 text-sm font-semibold tracking-wide"
                 >
-                  Send Message — Opens Email App
+                  Send Message (Opens Email App)
                 </button>
 
                 <p className="text-center text-xs" style={{ color: "var(--pf-muted)", opacity: 0.6 }}>

@@ -33,7 +33,7 @@ export function Experience({ jobs }: ExperienceProps) {
           className={cn("pf-reveal mb-16 text-center", isInView && "in-view")}
           style={{ transitionDelay: "0ms" }}
         >
-          <p className="pf-section-label mb-4">04 ─ Experience</p>
+          <p className="pf-section-label mb-4">04 · Experience</p>
           <h2
             className="pf-serif leading-tight"
             style={{

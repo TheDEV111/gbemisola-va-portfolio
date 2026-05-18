@@ -33,7 +33,7 @@ export function About() {
               className={cn("pf-reveal", isInView && "in-view")}
               style={{ transitionDelay: "0ms" }}
             >
-              <p className="pf-section-label mb-4">01 ─ About</p>
+              <p className="pf-section-label mb-4">01 · About</p>
               <h2
                 className="pf-serif mb-12 leading-tight"
                 style={{

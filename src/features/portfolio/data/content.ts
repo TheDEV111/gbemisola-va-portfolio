@@ -36,11 +36,11 @@ export const OWNER = {
 /* About                                                                */
 /* ------------------------------------------------------------------ */
 export const ABOUT = {
-  headline: "More than a VA — a systems-thinker in your corner.",
+  headline: "More than a VA. A systems-thinker in your corner.",
   paragraphs: [
-    "Before pivoting to virtual assistance, I spent years as a licensed pharmacist managing medication supply chains for an entire state, coordinating logistics between government ministries, hospitals, and field teams — and ensuring compliance in environments where errors simply weren't an option.",
+    "Before pivoting to virtual assistance, I spent years as a licensed pharmacist managing medication supply chains for an entire state, coordinating logistics between government ministries, hospitals, and field teams while ensuring compliance in environments where errors simply weren't an option.",
     "That background shaped how I work. I bring clinical-grade precision to inbox management, the supply-chain discipline of a logistics officer to project tracking, and the stakeholder fluency of someone who's liaised across government agencies under real operational pressure.",
-    "When you bring me onto your team, you're not just outsourcing tasks — you're adding someone who anticipates bottlenecks before they happen, communicates with clarity, and protects your time like it's the most valuable asset in the room. Because it is.",
+    "When you bring me onto your team, you're adding someone who anticipates bottlenecks before they happen, communicates with clarity, and protects your time like it's the most valuable asset in the room. Because it is.",
   ],
   stats: [
     { value: "5+", label: "Years of Experience" },
@@ -64,7 +64,7 @@ export const SERVICES = [
     icon: CalendarDays,
     title: "Calendar Management",
     description:
-      "Your schedule, defended. I coordinate meetings, block focus time, and ensure you're always where you need to be — without the back-and-forth.",
+      "Your schedule, defended. I coordinate meetings, block focus time, and ensure you're always where you need to be, without the scheduling back-and-forth.",
   },
   {
     icon: Headphones,
@@ -176,7 +176,7 @@ export const EXPERIENCE = [
     highlights: [
       "Coordinate pharmaceutical services across multiple health facilities statewide, maintaining precise records and compliance documentation.",
       "Manage all correspondence and documentation relating to drug availability, supply chain updates, and policy rollouts.",
-      "Serve as liaison between state health agencies, hospital facilities, and regulatory bodies — ensuring nothing falls through the cracks.",
+      "Serve as liaison between state health agencies, hospital facilities, and regulatory bodies, ensuring nothing falls through the cracks.",
       "Provide direct administrative support to senior management including scheduling, data collation, and briefing preparation.",
     ],
   },
@@ -198,7 +198,7 @@ export const EXPERIENCE = [
     period: "Jun 2025 – Nov 2025",
     highlights: [
       "Coordinated Last Mile Distribution (LMD) of medical supplies across Lagos State using digital tracking dashboards.",
-      "Functioned as the primary communication bridge between the Ministry, health facilities, and logistics partners — drafting reports and escalation memos for senior leadership.",
+      "Functioned as the primary communication bridge between the Ministry, health facilities, and logistics partners, drafting reports and escalation memos for senior leadership.",
       "Optimised inventory workflows through data-driven analysis, improving distribution efficiency and reducing delivery delays.",
     ],
   },
@@ -276,7 +276,7 @@ export const WHY_HIRE = [
     icon: MessageSquare,
     title: "Proactively Communicative",
     description:
-      "I've coordinated between government ministries, hospitals, and logistics partners. Clear, timely communication isn't a soft skill for me — it's survival.",
+      "I've coordinated between government ministries, hospitals, and logistics partners. Clear, timely communication isn't a soft skill for me. It's a professional standard I've operated under for years.",
   },
   {
     icon: Zap,

@@ -30,7 +30,7 @@ export function Services() {
           className={cn("pf-reveal mb-16 text-center", isInView && "in-view")}
           style={{ transitionDelay: "0ms" }}
         >
-          <p className="pf-section-label mb-4">02 ─ Services</p>
+          <p className="pf-section-label mb-4">02 · Services</p>
           <h2
             className="pf-serif mb-5 leading-tight"
             style={{
@@ -41,7 +41,7 @@ export function Services() {
             What I bring to your table.
           </h2>
           <p className="mx-auto max-w-xl text-base leading-relaxed" style={{ color: "var(--pf-muted)" }}>
-            From inbox zero to complex project tracking — I cover the full spectrum of virtual
+            From inbox zero to complex project tracking, I cover the full spectrum of virtual
             assistance with the rigor of a healthcare professional.
           </p>
         </div>
