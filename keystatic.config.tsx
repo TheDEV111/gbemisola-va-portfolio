@@ -45,7 +45,7 @@ export default config({
           fields.text({ label: "Highlight", multiline: true }),
           {
             label: "Key Highlights",
-            itemLabel: (props) => props.fields.value.value || "Highlight",
+            itemLabel: (props) => props.value || "Highlight",
           },
         ),
       },
@@ -82,7 +82,7 @@ export default config({
             category: fields.text({ label: "Category Name" }),
             tools: fields.array(
               fields.text({ label: "Tool / Skill" }),
-              { label: "Tools", itemLabel: (props) => props.fields.value.value || "Tool" },
+              { label: "Tools", itemLabel: (props) => props.value || "Tool" },
             ),
           }),
           {
