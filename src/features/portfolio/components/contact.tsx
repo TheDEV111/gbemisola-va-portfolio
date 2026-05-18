@@ -8,6 +8,7 @@ import { cn } from "@/shared/utils/cn";
 
 import { OWNER } from "../data/content";
 import { useInView } from "../hooks/use-in-view";
+
 import type { AvailabilityData } from "../types";
 
 interface ContactProps {

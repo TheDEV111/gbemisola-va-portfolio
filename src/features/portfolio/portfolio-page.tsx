@@ -1,11 +1,3 @@
-import { reader } from "./lib/reader";
-import type {
-  AvailabilityData,
-  ExperienceEntry,
-  HeroData,
-  SkillGroup,
-  TestimonialEntry,
-} from "./types";
 
 import { About } from "./components/about";
 import { Contact } from "./components/contact";
@@ -17,6 +9,15 @@ import { Services } from "./components/services";
 import { Skills } from "./components/skills";
 import { Testimonials } from "./components/testimonials";
 import { WhyHire } from "./components/why-hire";
+import { reader } from "./lib/reader";
+
+import type {
+  AvailabilityData,
+  ExperienceEntry,
+  HeroData,
+  SkillGroup,
+  TestimonialEntry,
+} from "./types";
 
 async function loadContent() {
   const [rawExperience, rawTestimonials, rawSkills, rawAvailability, rawHero] =

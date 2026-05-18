@@ -5,6 +5,7 @@ import { Quote } from "lucide-react";
 import { cn } from "@/shared/utils/cn";
 
 import { useInView } from "../hooks/use-in-view";
+
 import type { TestimonialEntry } from "../types";
 
 interface TestimonialsProps {
