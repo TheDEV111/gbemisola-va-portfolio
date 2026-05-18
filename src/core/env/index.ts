@@ -23,6 +23,8 @@ const envSchema = z.object({
   KEYSTATIC_GITHUB_CLIENT_ID: z.string().optional(),
   KEYSTATIC_GITHUB_CLIENT_SECRET: z.string().optional(),
   KEYSTATIC_SECRET: z.string().optional(),
+  // Comma-separated GitHub usernames allowed to access /keystatic admin
+  KEYSTATIC_ALLOWED_GITHUB_USERS: z.string().optional(),
 });
 
 /* ------------------------------------------------------------------ */

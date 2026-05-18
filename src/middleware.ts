@@ -1,33 +1,37 @@
 import { type NextRequest, NextResponse } from "next/server";
 
-// The portfolio root is fully public — only /dashboard requires auth
-const PROTECTED_PREFIXES = ["/dashboard"];
-const AUTH_PATHS = new Set(["/auth/login", "/auth/register", "/auth/forgot-password"]);
+// GitHub usernames allowed to access the Keystatic admin panel
+const KEYSTATIC_ALLOWED_USERS = (process.env["KEYSTATIC_ALLOWED_GITHUB_USERS"] ?? "")
+  .split(",")
+  .map((u) => u.trim().toLowerCase())
+  .filter(Boolean);
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Static assets, Next.js internals, and Keystatic admin — pass through
-  if (
-    pathname.startsWith("/_next") ||
-    pathname.startsWith("/api") ||
-    pathname.startsWith("/keystatic")
-  ) {
+  // Pass through Next.js internals and static assets
+  if (pathname.startsWith("/_next")) {
     return NextResponse.next();
   }
 
-  const hasSession = request.cookies.has("auth-session");
-  const isProtected = PROTECTED_PREFIXES.some((p) => pathname.startsWith(p));
-  const isAuthPage = AUTH_PATHS.has(pathname);
-
-  if (isProtected && !hasSession) {
-    const loginUrl = new URL("/auth/login", request.url);
-    loginUrl.searchParams.set("callbackUrl", pathname);
-    return NextResponse.redirect(loginUrl);
-  }
-
-  if (isAuthPage && hasSession) {
-    return NextResponse.redirect(new URL("/dashboard", request.url));
+  // Keystatic admin — verify GitHub username from session cookie if allowlist is configured
+  if (pathname.startsWith("/keystatic") || pathname.startsWith("/api/keystatic")) {
+    if (KEYSTATIC_ALLOWED_USERS.length > 0) {
+      const ksSession = request.cookies.get("keystatic-gh-session")?.value;
+      if (ksSession) {
+        try {
+          // Keystatic stores the GitHub login in the session JSON
+          const parsed = JSON.parse(Buffer.from(ksSession.split(".")[1] ?? "", "base64").toString());
+          const login = (parsed?.login ?? "").toLowerCase();
+          if (!KEYSTATIC_ALLOWED_USERS.includes(login)) {
+            return new NextResponse("Forbidden", { status: 403 });
+          }
+        } catch {
+          // Session unreadable — let Keystatic handle its own auth
+        }
+      }
+    }
+    return NextResponse.next();
   }
 
   return NextResponse.next();
