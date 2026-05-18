@@ -7,8 +7,12 @@ const AUTH_PATHS = new Set(["/auth/login", "/auth/register", "/auth/forgot-passw
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Static assets and Next.js internals — pass through immediately
-  if (pathname.startsWith("/_next") || pathname.startsWith("/api")) {
+  // Static assets, Next.js internals, and Keystatic admin — pass through
+  if (
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/api") ||
+    pathname.startsWith("/keystatic")
+  ) {
     return NextResponse.next();
   }
 
