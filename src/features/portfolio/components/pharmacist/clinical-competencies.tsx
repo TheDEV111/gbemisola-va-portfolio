@@ -92,6 +92,7 @@ export function ClinicalCompetencies() {
 
   return (
     <section
+      id="competencies"
       ref={ref as React.RefObject<HTMLElement>}
       className="relative py-24 lg:py-36"
       style={{ background: "var(--ph-surface)" }}

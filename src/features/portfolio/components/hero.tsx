@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+import Image from "next/image";
+
 import { ArrowDown } from "lucide-react";
 
 import { OWNER } from "../data/content";
@@ -28,34 +30,46 @@ export function Hero({ tagline, subTagline }: HeroProps) {
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden"
       style={{ background: "var(--pf-bg)" }}
     >
-      {/* Ambient glow — top */}
-      <div
-        className="pointer-events-none absolute left-1/2 top-0 h-[60vh] w-[80vw] -translate-x-1/2"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% 0%, rgba(200,169,110,0.09) 0%, transparent 65%)",
-        }}
+      {/* Cinematic portrait — fills the full hero */}
+      <Image
+        src="/Virtual-Assistant-profile-image.jpeg"
+        alt="Gbemisola Oginni — Virtual Assistant"
+        fill
+        priority
+        className="object-cover object-top md:object-[center_20%]"
+        sizes="100vw"
       />
-      {/* Ambient glow — bottom-left accent */}
+
+      {/* Dark cinematic veil — heavy at edges, lifted at centre so portrait breathes */}
       <div
-        className="pointer-events-none absolute bottom-0 left-0 h-[40vh] w-[40vw]"
+        className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at 0% 100%, rgba(167,139,250,0.05) 0%, transparent 60%)",
-        }}
-      />
-      {/* Ambient glow — bottom-right accent */}
-      <div
-        className="pointer-events-none absolute bottom-0 right-0 h-[40vh] w-[40vw]"
-        style={{
-          background:
-            "radial-gradient(ellipse at 100% 100%, rgba(200,169,110,0.05) 0%, transparent 60%)",
+            "radial-gradient(ellipse 80% 90% at 50% 42%, rgba(6,6,14,0.48) 0%, rgba(6,6,14,0.84) 100%)",
         }}
       />
 
-      {/* Subtle grid */}
+      {/* Desktop-only side vignette — prevents flat grey edges on wide viewports */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.025]"
+        className="pointer-events-none absolute inset-0 hidden md:block"
+        style={{
+          background:
+            "linear-gradient(to right, rgba(6,6,14,0.55) 0%, transparent 22%, transparent 78%, rgba(6,6,14,0.55) 100%)",
+        }}
+      />
+
+      {/* Gold shimmer from top — keeps brand glow alive over the photo */}
+      <div
+        className="pointer-events-none absolute left-1/2 top-0 h-[50vh] w-[70vw] -translate-x-1/2"
+        style={{
+          background:
+            "radial-gradient(ellipse at 50% 0%, rgba(200,169,110,0.18) 0%, transparent 65%)",
+        }}
+      />
+
+      {/* Subtle grid on top of photo */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.018]"
         style={{
           backgroundImage:
             "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
@@ -207,7 +221,7 @@ export function Hero({ tagline, subTagline }: HeroProps) {
       {/* Scroll indicator */}
       <button
         onClick={scrollToAbout}
-        className="pf-scroll-hint absolute bottom-10 left-1/2 flex flex-col items-center gap-2"
+        className="pf-scroll-hint absolute bottom-10 left-1/2 flex cursor-pointer flex-col items-center gap-2"
         aria-label="Scroll to about"
         style={{
           opacity: mounted ? 1 : 0,

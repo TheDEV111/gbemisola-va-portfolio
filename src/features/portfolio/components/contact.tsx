@@ -325,7 +325,7 @@ export function Contact({ availability }: ContactProps) {
 
                 <button
                   type="submit"
-                  className="pf-btn-primary mt-2 w-full rounded-xl py-4 text-sm font-semibold tracking-wide"
+                  className="pf-btn-primary mt-2 w-full cursor-pointer rounded-xl py-4 text-sm font-semibold tracking-wide"
                 >
                   Send Message (Opens Email App)
                 </button>

@@ -39,7 +39,7 @@ export function ProfileToggle() {
         <button
           onClick={() => handleSwitch("va")}
           disabled={isTransitioning}
-          className="relative z-10 flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-colors duration-300"
+          className="relative z-10 flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-colors duration-300"
           style={{ color: isVA ? "#c8a96e" : "#94a3b8" }}
           aria-pressed={isVA}
         >
@@ -74,7 +74,7 @@ export function ProfileToggle() {
         <button
           onClick={() => handleSwitch("pharmacist")}
           disabled={isTransitioning}
-          className="relative z-10 flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-colors duration-300"
+          className="relative z-10 flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-colors duration-300"
           style={{ color: !isVA ? "#0369a1" : "#94a3b8" }}
           aria-pressed={!isVA}
         >

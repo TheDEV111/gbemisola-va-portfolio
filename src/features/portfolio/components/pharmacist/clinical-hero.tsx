@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+import Image from "next/image";
+
 import { motion } from "framer-motion";
 import { Download, FlaskConical, MapPin, ShieldCheck } from "lucide-react";
 
@@ -29,13 +31,39 @@ export function ClinicalHero() {
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden"
       style={{ background: "var(--ph-bg)" }}
     >
-      {/* Subtle grid overlay */}
+      {/* Cinematic portrait — fills the full hero */}
+      <Image
+        src="/Pharmacist-profile-image.jpeg"
+        alt="Gbemisola Oginni — Clinical Pharmacist"
+        fill
+        priority
+        className="object-cover object-top md:object-[center_38%]"
+        sizes="100vw"
+      />
+
+      {/* Light clinical wash — bright at centre to keep text crisp, reveals photo at edges */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(3,105,161,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(3,105,161,0.04) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
+          background:
+            "radial-gradient(ellipse 80% 90% at 50% 42%, rgba(240,245,251,0.58) 0%, rgba(240,245,251,0.9) 100%)",
+        }}
+      />
+
+      {/* Desktop-only side vignette — fades out the plain white bg at wide edges */}
+      <div
+        className="pointer-events-none absolute inset-0 hidden md:block"
+        style={{
+          background:
+            "linear-gradient(to right, rgba(240,245,251,0.7) 0%, transparent 22%, transparent 78%, rgba(240,245,251,0.7) 100%)",
+        }}
+      />
+
+      {/* Blue ambient glow from top — reinforces the clinical brand tone */}
+      <div
+        className="pointer-events-none absolute left-1/2 top-0 h-[50vh] w-[60vw] -translate-x-1/2"
+        style={{
+          background: "radial-gradient(ellipse at 50% 0%, rgba(3,105,161,0.18) 0%, transparent 70%)",
         }}
       />
 
@@ -45,11 +73,13 @@ export function ClinicalHero() {
         style={{ background: "linear-gradient(90deg, transparent, #0369a1 40%, #0d9488 60%, transparent)" }}
       />
 
-      {/* Ambient glow */}
+      {/* Subtle grid overlay on top of photo */}
       <div
-        className="pointer-events-none absolute left-1/2 top-0 h-[50vh] w-[60vw] -translate-x-1/2 opacity-40"
+        className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{
-          background: "radial-gradient(ellipse at 50% 0%, rgba(3,105,161,0.12) 0%, transparent 70%)",
+          backgroundImage:
+            "linear-gradient(rgba(3,105,161,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(3,105,161,0.4) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
         }}
       />
 

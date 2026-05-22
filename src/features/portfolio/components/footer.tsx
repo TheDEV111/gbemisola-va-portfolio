@@ -41,7 +41,7 @@ export function Footer() {
 
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="text-xs uppercase tracking-widest transition-colors duration-200 hover:underline"
+          className="cursor-pointer text-xs uppercase tracking-widest transition-colors duration-200 hover:underline"
           style={{ color: "var(--pf-gold)" }}
         >
           Back to Top ↑

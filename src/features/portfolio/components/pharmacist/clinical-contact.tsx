@@ -39,6 +39,7 @@ export function ClinicalContact() {
 
   return (
     <section
+      id="contact"
       ref={ref as React.RefObject<HTMLElement>}
       className="relative py-24 lg:py-36"
       style={{ background: "var(--ph-surface)" }}
@@ -247,7 +248,7 @@ export function ClinicalContact() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full rounded-xl py-3.5 text-sm font-semibold tracking-wide transition-all duration-300"
+                  className="w-full cursor-pointer rounded-xl py-3.5 text-sm font-semibold tracking-wide transition-all duration-300"
                   style={{ background: "#0369a1", color: "#ffffff" }}
                   onMouseEnter={(e) => ((e.target as HTMLButtonElement).style.background = "#0284c7")}
                   onMouseLeave={(e) => ((e.target as HTMLButtonElement).style.background = "#0369a1")}

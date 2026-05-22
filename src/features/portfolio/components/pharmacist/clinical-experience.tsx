@@ -132,6 +132,7 @@ export function ClinicalExperience() {
 
   return (
     <section
+      id="experience"
       ref={ref as React.RefObject<HTMLElement>}
       className="relative py-24 lg:py-36"
       style={{ background: "var(--ph-bg)" }}

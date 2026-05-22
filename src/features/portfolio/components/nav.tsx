@@ -70,7 +70,7 @@ export function Nav() {
         {/* Logo */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="group flex items-center gap-2"
+          className="group flex cursor-pointer items-center gap-2"
           aria-label="Back to top"
         >
           <span
@@ -97,7 +97,7 @@ export function Nav() {
               <li key={link.href}>
                 <button
                   onClick={() => handleNavClick(link.href)}
-                  className="text-sm tracking-wide transition-colors duration-200 hover:opacity-100"
+                  className="cursor-pointer text-sm tracking-wide transition-colors duration-200 hover:opacity-100"
                   style={{ color: mutedColor }}
                 >
                   {link.label}
@@ -130,7 +130,7 @@ export function Nav() {
           <ProfileToggle />
           <button
             onClick={() => setMenuOpen((v) => !v)}
-            className="flex h-9 w-9 flex-col items-center justify-center gap-1.5"
+            className="flex h-9 w-9 cursor-pointer flex-col items-center justify-center gap-1.5"
             aria-label="Toggle menu"
           >
             <span
@@ -173,7 +173,7 @@ export function Nav() {
               <li key={link.href}>
                 <button
                   onClick={() => handleNavClick(link.href)}
-                  className="text-base tracking-wide"
+                  className="cursor-pointer text-base tracking-wide"
                   style={{ color: mutedColor }}
                 >
                   {link.label}
