@@ -1,37 +1,35 @@
 groups:
-  - category: Productivity & Communication
+  - category: Property & Guest Operations
     tools:
-      - Google Workspace
-      - Gmail
-      - Google Drive
-      - Google Docs
-      - Google Sheets
-      - Google Slides
-      - Google Calendar
-      - Microsoft Outlook
-      - Microsoft Word
-      - Microsoft Excel
-      - Microsoft PowerPoint
-  - category: Operations & Data
+      - Bookings & Reservations Management
+      - Guest Communication & Query Resolution
+      - Service Provider & Vendor Coordination
+      - Calendar Management & Availability Tracking
+      - Property Owner Liaison
+      - Scheduling & Logistics Coordination
+  - category: Administrative Support
     tools:
-      - Electronic Medical Records (EMR)
-      - Inventory Management Software
-      - Point-of-Sale (POS) Systems
-      - Digital Dashboards
-      - Supply Chain Documentation
-      - Cold Chain Compliance
-  - category: AI & Emerging Tools
+      - Document Preparation & Data Entry
+      - Filing & Record-keeping
+      - Meeting Coordination
+      - Agenda Preparation & Minute-taking
+      - Report Writing
+      - Correspondence Management
+      - Process Documentation
+  - category: Technology & Tools
     tools:
+      - Google Workspace (Docs, Sheets, Slides, Calendar, Gmail, Drive)
+      - Microsoft Office Suite (Word, Excel, PowerPoint, Outlook)
+      - QuickBooks
+      - ClickUp
+      - POS Systems
+      - EMR Platforms
       - AI Productivity Tools
-      - Prompt Engineering
-      - AI-assisted Research
-      - Workflow Automation
   - category: Soft Skills
     tools:
-      - Stakeholder Communication
-      - Report Writing
-      - Minute-taking
-      - Agenda Preparation
-      - Cross-functional Coordination
-      - Problem-solving
+      - Multi-stakeholder Coordination
+      - Proactive Problem-solving
+      - Cross-functional Communication
       - Discretion & Confidentiality
+      - Attention to Detail
+      - Fast-paced Environment Adaptability
