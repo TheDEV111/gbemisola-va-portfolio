@@ -221,12 +221,22 @@
 
 /* ---- Custom properties ------------------------------------------- */
 :root {
+  /* VA profile */
   --pf-bg:      #06060e;
   --pf-surface: #0c0c1a;
   --pf-gold:    #c8a96e;
   --pf-purple:  #a78bfa;
   --pf-cream:   #f0ede8;
   --pf-muted:   #6b6a7e;
+
+  /* Pharmacist profile */
+  --ph-bg:      #f0f5fb;
+  --ph-surface: #ffffff;
+  --ph-blue:    #0369a1;
+  --ph-teal:    #0d9488;
+  --ph-text:    #0c1a2e;
+  --ph-muted:   #64748b;
+  --ph-border:  #e2e8f0;
 }
 
 /* ---- Base overrides for portfolio dark shell --------------------- */

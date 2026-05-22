@@ -1,14 +1,7 @@
-
-import { About } from "./components/about";
-import { Contact } from "./components/contact";
-import { Experience } from "./components/experience";
-import { Footer } from "./components/footer";
-import { Hero } from "./components/hero";
 import { Nav } from "./components/nav";
-import { Services } from "./components/services";
-import { Skills } from "./components/skills";
-import { Testimonials } from "./components/testimonials";
-import { WhyHire } from "./components/why-hire";
+import { ProfileShell } from "./components/profile-shell";
+import { ProfileTransition } from "./components/profile-transition";
+import { ProfileProvider } from "./context/profile-context";
 import { reader } from "./lib/reader";
 
 import type {
@@ -18,6 +11,7 @@ import type {
   SkillGroup,
   TestimonialEntry,
 } from "./types";
+
 
 async function loadContent() {
   const [rawExperience, rawTestimonials, rawSkills, rawAvailability, rawHero] =
@@ -68,30 +62,26 @@ async function loadContent() {
     tagline: rawHero?.tagline ?? "Where precision meets possibility.",
     subTagline:
       rawHero?.subTagline ??
-      "Five years in healthcare operations, government logistics, and pharmaceutical administration — now channelled into keeping your business ruthlessly organised.",
+      "Five years in healthcare operations, government logistics, and pharmaceutical administration, now channelled into keeping your business ruthlessly organised.",
   };
 
   return { experience, testimonials, skills, availability, hero };
 }
 
 export async function PortfolioPage() {
-  const { experience, testimonials, skills, availability, hero } =
-    await loadContent();
+  const { experience, testimonials, skills, availability, hero } = await loadContent();
 
   return (
-    <>
+    <ProfileProvider>
+      <ProfileTransition />
       <Nav />
-      <main>
-        <Hero tagline={hero.tagline} subTagline={hero.subTagline} />
-        <About />
-        <Services />
-        <Skills groups={skills} />
-        <Experience jobs={experience} />
-        <Testimonials items={testimonials} />
-        <WhyHire />
-        <Contact availability={availability} />
-      </main>
-      <Footer />
-    </>
+      <ProfileShell
+        experience={experience}
+        testimonials={testimonials}
+        skills={skills}
+        availability={availability}
+        hero={hero}
+      />
+    </ProfileProvider>
   );
 }
