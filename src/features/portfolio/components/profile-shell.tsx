@@ -12,7 +12,20 @@ import { Testimonials } from "./testimonials";
 import { WhyHire } from "./why-hire";
 import { useProfile } from "../context/profile-context";
 
-import type { AvailabilityData, ExperienceEntry, HeroData, SkillGroup, TestimonialEntry } from "../types";
+import type {
+  AboutData,
+  AvailabilityData,
+  ExperienceEntry,
+  HeroData,
+  OwnerData,
+  PharmacistCompetencyEntry,
+  PharmacistCredentials,
+  PharmacistRole,
+  ServiceEntry,
+  SkillGroup,
+  TestimonialEntry,
+  WhyHireEntry,
+} from "../types";
 
 interface ProfileShellProps {
   experience: ExperienceEntry[];
@@ -20,6 +33,13 @@ interface ProfileShellProps {
   skills: SkillGroup[];
   availability: AvailabilityData;
   hero: HeroData;
+  owner: OwnerData;
+  about: AboutData;
+  services: ServiceEntry[];
+  whyHire: WhyHireEntry[];
+  pharmacistRoles: PharmacistRole[];
+  pharmacistCompetencies: PharmacistCompetencyEntry[];
+  pharmacistCredentials: PharmacistCredentials;
 }
 
 export function ProfileShell({
@@ -28,6 +48,13 @@ export function ProfileShell({
   skills,
   availability,
   hero,
+  owner,
+  about,
+  services,
+  whyHire,
+  pharmacistRoles,
+  pharmacistCompetencies,
+  pharmacistCredentials,
 }: ProfileShellProps) {
   const { profile } = useProfile();
 
@@ -35,19 +62,26 @@ export function ProfileShell({
     return (
       <>
         <main>
-          <Hero tagline={hero.tagline} subTagline={hero.subTagline} />
-          <About />
-          <Services />
+          <Hero tagline={hero.tagline} subTagline={hero.subTagline} ownerEmail={owner.email} ownerSubtitle={owner.subtitle} resumeUrl={owner.resumeUrl} />
+          <About about={about} ownerDisplayName={owner.displayName} />
+          <Services services={services} />
           <Skills groups={skills} />
           <Experience jobs={experience} />
           <Testimonials items={testimonials} />
-          <WhyHire />
-          <Contact availability={availability} />
+          <WhyHire items={whyHire} />
+          <Contact availability={availability} owner={owner} />
         </main>
-        <Footer />
+        <Footer owner={owner} />
       </>
     );
   }
 
-  return <PharmacistProfile />;
+  return (
+    <PharmacistProfile
+      owner={owner}
+      roles={pharmacistRoles}
+      competencies={pharmacistCompetencies}
+      credentials={pharmacistCredentials}
+    />
+  );
 }

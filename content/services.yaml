@@ -1,0 +1,47 @@
+items:
+  - iconName: Mail
+    title: Email Management
+    description: >-
+      Inbox zero isn't a myth. I triage, respond, flag, and organize your
+      correspondence so nothing urgent ever slips through.
+  - iconName: CalendarDays
+    title: Calendar Management
+    description: >-
+      Your schedule, defended. I coordinate meetings, block focus time, and
+      ensure you're always where you need to be, without the scheduling
+      back-and-forth.
+  - iconName: Headphones
+    title: Customer Support
+    description: >-
+      Professional, empathetic responses that reflect well on your brand. I
+      handle inquiries, resolve issues, and escalate when needed.
+  - iconName: Plane
+    title: Travel Coordination
+    description: >-
+      Flights, hotels, itineraries, and contingencies — all researched and
+      booked with your preferences and budget at the forefront.
+  - iconName: Database
+    title: Data Entry & Records
+    description: >-
+      Accurate, consistent, and organized. From spreadsheets to CRMs, I
+      maintain your records with the precision of a healthcare professional.
+  - iconName: LayoutGrid
+    title: Social Media Assistance
+    description: >-
+      Content scheduling, comment moderation, and basic graphic coordination
+      to keep your digital presence active and consistent.
+  - iconName: Search
+    title: Research & Analysis
+    description: >-
+      Deep-dives into competitors, markets, suppliers, or topics — delivered
+      as clean summaries you can actually act on.
+  - iconName: ClipboardList
+    title: Administrative Support
+    description: >-
+      Document preparation, report writing, filing, and record-keeping handled
+      quietly and competently in the background.
+  - iconName: GitBranch
+    title: Project Coordination
+    description: >-
+      Tracking deliverables, chasing updates, organizing task lists, and
+      keeping multi-party projects moving without micromanaging anyone.

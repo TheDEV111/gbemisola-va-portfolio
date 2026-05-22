@@ -1,12 +1,17 @@
 "use client";
 
-
 import { cn } from "@/shared/utils/cn";
 
-import { ABOUT, OWNER } from "../data/content";
 import { useInView } from "../hooks/use-in-view";
 
-export function About() {
+import type { AboutData } from "../types";
+
+interface AboutProps {
+  about: AboutData;
+  ownerDisplayName: string;
+}
+
+export function About({ about, ownerDisplayName }: AboutProps) {
   const { ref: sectionRef, isInView } = useInView();
 
   return (
@@ -16,7 +21,6 @@ export function About() {
       className="relative overflow-hidden py-28 lg:py-40"
       style={{ background: "var(--pf-surface)" }}
     >
-      {/* Subtle top border */}
       <div
         className="absolute inset-x-0 top-0 h-px"
         style={{
@@ -41,13 +45,13 @@ export function About() {
                   color: "var(--pf-cream)",
                 }}
               >
-                {ABOUT.headline}
+                {about.headline}
               </h2>
             </div>
 
             {/* Stats grid */}
             <div className="grid grid-cols-2 gap-6">
-              {ABOUT.stats.map((stat, i) => (
+              {about.stats.map((stat, i) => (
                 <div
                   key={stat.label}
                   className={cn("pf-reveal pf-card rounded-2xl p-6", isInView && "in-view")}
@@ -66,24 +70,18 @@ export function About() {
               ))}
             </div>
 
-            {/* Signature / credentials */}
+            {/* Signature */}
             <div
               className={cn("pf-reveal mt-10 flex items-center gap-4", isInView && "in-view")}
               style={{ transitionDelay: "360ms" }}
             >
-              <div
-                className="h-px flex-1"
-                style={{ background: "rgba(255,255,255,0.07)" }}
-              />
+              <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.07)" }} />
               <div className="text-right">
-                <p
-                  className="pf-serif text-sm italic"
-                  style={{ color: "var(--pf-muted)" }}
-                >
-                  {OWNER.displayName}
+                <p className="pf-serif text-sm italic" style={{ color: "var(--pf-muted)" }}>
+                  {ownerDisplayName}
                 </p>
                 <p className="text-xs uppercase tracking-widest" style={{ color: "var(--pf-gold)" }}>
-                  B.Pharm · Licensed Pharmacist
+                  {about.credential}
                 </p>
               </div>
             </div>
@@ -91,7 +89,7 @@ export function About() {
 
           {/* Right — Bio paragraphs */}
           <div className="flex flex-col justify-center gap-7">
-            {ABOUT.paragraphs.map((para, i) => (
+            {about.paragraphs.map((para, i) => (
               <p
                 key={i}
                 className={cn("pf-reveal text-base leading-[1.9]", isInView && "in-view")}
@@ -105,19 +103,16 @@ export function About() {
               </p>
             ))}
 
-            {/* Highlighted pull quote */}
-            <blockquote
-              className={cn("pf-reveal mt-2 border-l-2 pl-6", isInView && "in-view")}
-              style={{
-                borderColor: "var(--pf-gold)",
-                transitionDelay: "500ms",
-              }}
-            >
-              <p className="text-base italic leading-relaxed" style={{ color: "var(--pf-cream)" }}>
-                &ldquo;I don&rsquo;t just execute tasks — I protect the conditions that allow you
-                to do your best work.&rdquo;
-              </p>
-            </blockquote>
+            {about.pullQuote && (
+              <blockquote
+                className={cn("pf-reveal mt-2 border-l-2 pl-6", isInView && "in-view")}
+                style={{ borderColor: "var(--pf-gold)", transitionDelay: "500ms" }}
+              >
+                <p className="text-base italic leading-relaxed" style={{ color: "var(--pf-cream)" }}>
+                  &ldquo;{about.pullQuote}&rdquo;
+                </p>
+              </blockquote>
+            )}
           </div>
         </div>
       </div>

@@ -5,44 +5,13 @@ import { Award, BookOpen, Globe, Users } from "lucide-react";
 
 import { useInView } from "../../hooks/use-in-view";
 
-const EDUCATION = [
-  {
-    degree: "PGD — Logistics & Supply Chain Management",
-    institution: "Chartered Institute of Logistics and Supply Chain Management",
-    period: "January 2026 (in view)",
-    note: "In progress",
-  },
-  {
-    degree: "Bachelor of Pharmacy (B.Pharm.)",
-    institution: "University of Lagos, Idi-Araba",
-    period: "Dec 2017 – Sep 2023",
-    note: "",
-  },
-];
+import type { PharmacistCredentials } from "../../types";
 
-const CERTIFICATES = [
-  { name: "First Aid Training", issuer: "Nigerian Red Cross", year: "2026" },
-  { name: "Virtual Assistant Training", issuer: "ALX", year: "2025" },
-  { name: "AI and Career Essentials (AICE)", issuer: "ALX", year: "2024" },
-  { name: "Scrum Study Project Management", issuer: "Scrum Study", year: "2020" },
-  { name: "IT Essentials", issuer: "Cisco", year: "2015" },
-];
+interface ClinicalCredentialsProps {
+  credentials: PharmacistCredentials;
+}
 
-const AFFILIATIONS = [
-  { org: "Wellsprings Mental Health Initiative", role: "Deputy Director, Mental Health Services", year: "2025" },
-  { org: "30 Beautiful Minds", role: "Member", year: "2024" },
-  { org: "PSN — Young Pharmacist Group", role: "Member", year: "2023" },
-  { org: "Drug Free Club", role: "Member", year: "2022" },
-  { org: "Future Pharmacy Initiative", role: "Member", year: "2021" },
-];
-
-const LANGUAGES = [
-  { name: "English", level: "Native / Bilingual" },
-  { name: "Yoruba", level: "Moderate" },
-  { name: "French", level: "Basic" },
-];
-
-export function ClinicalCredentials() {
+export function ClinicalCredentials({ credentials }: ClinicalCredentialsProps) {
   const { ref, isInView } = useInView();
 
   return (
@@ -57,7 +26,6 @@ export function ClinicalCredentials() {
       />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
-        {/* Header */}
         <motion.div
           className="mb-14 text-center"
           initial={{ opacity: 0, y: 16 }}
@@ -94,14 +62,11 @@ export function ClinicalCredentials() {
               </h3>
             </div>
             <div className="flex flex-col gap-4">
-              {EDUCATION.map((e) => (
+              {credentials.education.map((e) => (
                 <div
                   key={e.degree}
                   className="rounded-2xl p-5"
-                  style={{
-                    background: "var(--ph-bg)",
-                    border: "1px solid rgba(3,105,161,0.08)",
-                  }}
+                  style={{ background: "var(--ph-bg)", border: "1px solid rgba(3,105,161,0.08)" }}
                 >
                   <div className="mb-1 flex items-start justify-between gap-3">
                     <p className="text-sm font-semibold leading-snug" style={{ color: "var(--ph-text)" }}>
@@ -141,14 +106,11 @@ export function ClinicalCredentials() {
               </h3>
             </div>
             <div className="flex flex-col gap-3">
-              {CERTIFICATES.map((c) => (
+              {credentials.certificates.map((c) => (
                 <div
                   key={c.name}
                   className="flex items-center justify-between rounded-xl px-4 py-3"
-                  style={{
-                    background: "var(--ph-bg)",
-                    border: "1px solid rgba(3,105,161,0.08)",
-                  }}
+                  style={{ background: "var(--ph-bg)", border: "1px solid rgba(3,105,161,0.08)" }}
                 >
                   <div>
                     <p className="text-sm font-medium" style={{ color: "var(--ph-text)" }}>{c.name}</p>
@@ -187,17 +149,14 @@ export function ClinicalCredentials() {
               </h3>
             </div>
             <div className="flex flex-col gap-3">
-              {AFFILIATIONS.map((a) => (
+              {credentials.affiliations.map((a) => (
                 <div
-                  key={a.org}
+                  key={a.organization}
                   className="flex items-start justify-between gap-3 rounded-xl px-4 py-3"
-                  style={{
-                    background: "var(--ph-bg)",
-                    border: "1px solid rgba(3,105,161,0.08)",
-                  }}
+                  style={{ background: "var(--ph-bg)", border: "1px solid rgba(3,105,161,0.08)" }}
                 >
                   <div>
-                    <p className="text-sm font-medium" style={{ color: "var(--ph-text)" }}>{a.org}</p>
+                    <p className="text-sm font-medium" style={{ color: "var(--ph-text)" }}>{a.organization}</p>
                     <p className="text-xs" style={{ color: "#64748b" }}>{a.role}</p>
                   </div>
                   <span className="shrink-0 text-xs" style={{ color: "#94a3b8" }}>{a.year}</span>
@@ -224,16 +183,13 @@ export function ClinicalCredentials() {
               </h3>
             </div>
             <div className="flex flex-col gap-3">
-              {LANGUAGES.map((l) => (
+              {credentials.languages.map((l) => (
                 <div
-                  key={l.name}
+                  key={l.language}
                   className="flex items-center justify-between rounded-xl px-4 py-3"
-                  style={{
-                    background: "var(--ph-bg)",
-                    border: "1px solid rgba(3,105,161,0.08)",
-                  }}
+                  style={{ background: "var(--ph-bg)", border: "1px solid rgba(3,105,161,0.08)" }}
                 >
-                  <p className="text-sm font-medium" style={{ color: "var(--ph-text)" }}>{l.name}</p>
+                  <p className="text-sm font-medium" style={{ color: "var(--ph-text)" }}>{l.language}</p>
                   <span
                     className="rounded-full px-2.5 py-1 text-xs"
                     style={{

@@ -2,9 +2,13 @@
 
 import { ArrowUpRight } from "lucide-react";
 
-import { OWNER } from "../data/content";
+import type { OwnerData } from "../types";
 
-export function Footer() {
+interface FooterProps {
+  owner: OwnerData;
+}
+
+export function Footer({ owner }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
@@ -17,19 +21,19 @@ export function Footer() {
     >
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 sm:flex-row lg:px-12">
         <p className="text-xs" style={{ color: "var(--pf-muted)" }}>
-          © {year} {OWNER.displayName} · All rights reserved.
+          © {year} {owner.displayName} · All rights reserved.
         </p>
 
         <div className="flex items-center gap-6">
           <a
-            href={`mailto:${OWNER.email}`}
+            href={`mailto:${owner.email}`}
             className="flex items-center gap-1 text-xs transition-colors duration-200 hover:underline"
             style={{ color: "var(--pf-muted)" }}
           >
-            {OWNER.email}
+            {owner.email}
           </a>
           <a
-            href={OWNER.linkedin}
+            href={owner.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1 text-xs transition-colors duration-200"

@@ -5,10 +5,15 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Download, Linkedin, Mail, MapPin } from "lucide-react";
 
-import { OWNER } from "../../data/content";
 import { useInView } from "../../hooks/use-in-view";
 
-export function ClinicalContact() {
+import type { OwnerData } from "../../types";
+
+interface ClinicalContactProps {
+  owner: OwnerData;
+}
+
+export function ClinicalContact({ owner }: ClinicalContactProps) {
   const { ref, isInView } = useInView();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
@@ -22,7 +27,7 @@ export function ClinicalContact() {
     const body = encodeURIComponent(
       `Hi Gbemisola,\n\nMy name is ${form.name} (${form.email}).\n\n${form.message}\n\nBest regards,\n${form.name}`,
     );
-    window.location.href = `mailto:${OWNER.email}?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${owner.email}?subject=${subject}&body=${body}`;
   };
 
   const inputBase: React.CSSProperties = {
@@ -129,7 +134,7 @@ export function ClinicalContact() {
             {/* Contact details */}
             <div className="flex flex-col gap-4">
               <a
-                href={`mailto:${OWNER.email}`}
+                href={`mailto:${owner.email}`}
                 className="group flex items-center gap-3 transition-opacity duration-200 hover:opacity-80"
               >
                 <div
@@ -141,7 +146,7 @@ export function ClinicalContact() {
                 <div>
                   <p className="text-xs uppercase tracking-widest" style={{ color: "#94a3b8" }}>Email</p>
                   <p className="text-sm font-medium group-hover:underline" style={{ color: "#0c1a2e" }}>
-                    {OWNER.email}
+                    {owner.email}
                   </p>
                 </div>
               </a>
@@ -155,12 +160,12 @@ export function ClinicalContact() {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-widest" style={{ color: "#94a3b8" }}>Location</p>
-                  <p className="text-sm font-medium" style={{ color: "#0c1a2e" }}>{OWNER.location}</p>
+                  <p className="text-sm font-medium" style={{ color: "#0c1a2e" }}>{owner.location}</p>
                 </div>
               </div>
 
               <a
-                href={OWNER.linkedin}
+                href={owner.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-3 transition-opacity duration-200 hover:opacity-80"

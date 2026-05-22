@@ -6,13 +6,13 @@ import { ArrowUpRight, Linkedin, Mail, MapPin } from "lucide-react";
 
 import { cn } from "@/shared/utils/cn";
 
-import { OWNER } from "../data/content";
 import { useInView } from "../hooks/use-in-view";
 
-import type { AvailabilityData } from "../types";
+import type { AvailabilityData, OwnerData } from "../types";
 
 interface ContactProps {
   availability: AvailabilityData;
+  owner: OwnerData;
 }
 
 interface FormState {
@@ -22,7 +22,7 @@ interface FormState {
   message: string;
 }
 
-export function Contact({ availability }: ContactProps) {
+export function Contact({ availability, owner }: ContactProps) {
   const { ref: sectionRef, isInView } = useInView();
   const [form, setForm] = useState<FormState>({
     name: "",
@@ -47,7 +47,7 @@ export function Contact({ availability }: ContactProps) {
       `Hi Gbemisola,\n\nMy name is ${form.name} (${form.email}).\n\n${form.message}\n\nBest regards,\n${form.name}`,
     );
 
-    window.location.href = `mailto:${OWNER.email}?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${owner.email}?subject=${subject}&body=${body}`;
   };
 
   const inputClass =
@@ -120,7 +120,7 @@ export function Contact({ availability }: ContactProps) {
 
               <div className="flex flex-col gap-5">
                 <a
-                  href={`mailto:${OWNER.email}`}
+                  href={`mailto:${owner.email}`}
                   className="group flex items-center gap-4 transition-colors duration-200"
                 >
                   <div
@@ -140,7 +140,7 @@ export function Contact({ availability }: ContactProps) {
                       className="text-sm font-medium transition-colors duration-200 group-hover:underline"
                       style={{ color: "var(--pf-cream)" }}
                     >
-                      {OWNER.email}
+                      {owner.email}
                     </p>
                   </div>
                 </a>
@@ -160,13 +160,13 @@ export function Contact({ availability }: ContactProps) {
                       Location
                     </p>
                     <p className="text-sm font-medium" style={{ color: "var(--pf-cream)" }}>
-                      {OWNER.location}
+                      {owner.location}
                     </p>
                   </div>
                 </div>
 
                 <a
-                  href={OWNER.linkedin}
+                  href={owner.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center gap-4 transition-colors duration-200"

@@ -2,10 +2,16 @@
 
 import { cn } from "@/shared/utils/cn";
 
-import { WHY_HIRE } from "../data/content";
+import { getIcon } from "../lib/icon-map";
 import { useInView } from "../hooks/use-in-view";
 
-export function WhyHire() {
+import type { WhyHireEntry } from "../types";
+
+interface WhyHireProps {
+  items: WhyHireEntry[];
+}
+
+export function WhyHire({ items }: WhyHireProps) {
   const { ref: sectionRef, isInView } = useInView();
 
   return (
@@ -31,18 +37,15 @@ export function WhyHire() {
           <p className="pf-section-label mb-4">06 · Why Work With Me</p>
           <h2
             className="pf-serif leading-tight"
-            style={{
-              fontSize: "clamp(2rem, 3.5vw, 3rem)",
-              color: "var(--pf-cream)",
-            }}
+            style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", color: "var(--pf-cream)" }}
           >
             The difference is in the details.
           </h2>
         </div>
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {WHY_HIRE.map((item, i) => {
-            const Icon = item.icon;
+          {items.map((item, i) => {
+            const Icon = getIcon(item.iconName);
             return (
               <div
                 key={item.title}
@@ -58,17 +61,11 @@ export function WhyHire() {
               >
                 <div
                   className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl"
-                  style={{
-                    background: "rgba(200,169,110,0.07)",
-                  }}
+                  style={{ background: "rgba(200,169,110,0.07)" }}
                 >
                   <Icon size={17} style={{ color: "var(--pf-gold)" }} aria-hidden="true" />
                 </div>
-
-                <h3
-                  className="mb-3 text-base font-semibold"
-                  style={{ color: "var(--pf-cream)" }}
-                >
+                <h3 className="mb-3 text-base font-semibold" style={{ color: "var(--pf-cream)" }}>
                   {item.title}
                 </h3>
                 <p className="text-sm leading-[1.85]" style={{ color: "var(--pf-muted)" }}>

@@ -1,0 +1,41 @@
+items:
+  - iconName: FlaskConical
+    title: Drug Therapy Management
+    description: >-
+      Prescription review, drug interaction screening, and therapeutic outcome
+      monitoring across hospital and community settings.
+  - iconName: Activity
+    title: Clinical Documentation
+    description: >-
+      Accurate pharmaceutical records, dispensing logs, and regulatory
+      compliance documentation using EMR systems.
+  - iconName: Users
+    title: Patient Counselling
+    description: >-
+      Clear medication education and adherence counselling for patients across
+      diverse socioeconomic backgrounds.
+  - iconName: ShieldCheck
+    title: Regulatory Compliance
+    description: >-
+      NAFDAC and PCN standards adherence, including controlled substance
+      management and audit-ready record-keeping.
+  - iconName: Warehouse
+    title: Inventory & Supply Chain
+    description: >-
+      Cold chain compliance, stock reconciliation, and essential medicine
+      availability management across government health facilities.
+  - iconName: Thermometer
+    title: Cold Chain Management
+    description: >-
+      Temperature-sensitive commodity handling, storage protocol enforcement,
+      and cold chain documentation.
+  - iconName: ClipboardList
+    title: Pharmaceutical Administration
+    description: >-
+      Policy implementation, team coordination, and liaison with regulatory
+      bodies, hospital departments, and government agencies.
+  - iconName: BookOpen
+    title: Research & Outreach
+    description: >-
+      Health awareness campaigns, community outreach coordination, and
+      evidence-based practice contributions.

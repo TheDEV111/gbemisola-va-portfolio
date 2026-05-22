@@ -1,0 +1,36 @@
+items:
+  - iconName: CheckCircle
+    title: Clinically Precise
+    description: >-
+      Five years in pharmaceutical operations trained me to treat errors as
+      unacceptable. That mindset doesn't switch off when I open a spreadsheet
+      or manage your inbox.
+  - iconName: MessageSquare
+    title: Proactively Communicative
+    description: >-
+      I've coordinated between government ministries, hospitals, and logistics
+      partners. Clear, timely communication isn't a soft skill for me. It's a
+      professional standard I've operated under for years.
+  - iconName: Zap
+    title: Operationally Sharp
+    description: >-
+      Supply chain logistics and last-mile distribution taught me to think in
+      systems. I spot bottlenecks, optimize workflows, and build habits that
+      compound over time.
+  - iconName: Shield
+    title: Absolutely Discreet
+    description: >-
+      Healthcare confidentiality is among the strictest standards in any
+      profession. Your business information is safe — not as a policy, but as
+      a deeply ingrained professional reflex.
+  - iconName: Monitor
+    title: Digitally Fluent
+    description: >-
+      From EMR systems and POS software to Google Workspace and AI productivity
+      tools, I move comfortably across platforms and adapt to new tools quickly.
+  - iconName: Clock
+    title: Reliably Available
+    description: >-
+      I understand what it means to support operations that can't afford
+      downtime. When I commit to a timeline or deliverable, I meet it —
+      consistently.

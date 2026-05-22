@@ -6,14 +6,16 @@ import Image from "next/image";
 
 import { ArrowDown } from "lucide-react";
 
-import { OWNER } from "../data/content";
 
 interface HeroProps {
   tagline: string;
   subTagline: string;
+  ownerEmail: string;
+  ownerSubtitle: string;
+  resumeUrl: string;
 }
 
-export function Hero({ tagline, subTagline }: HeroProps) {
+export function Hero({ tagline, subTagline, ownerEmail, ownerSubtitle, resumeUrl }: HeroProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -124,7 +126,7 @@ export function Hero({ tagline, subTagline }: HeroProps) {
         >
           <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.1)" }} />
           <span className="text-xs uppercase tracking-[0.2em]" style={{ color: "var(--pf-muted)" }}>
-            {OWNER.subtitle}
+            {ownerSubtitle}
           </span>
           <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.1)" }} />
         </div>
@@ -167,13 +169,13 @@ export function Hero({ tagline, subTagline }: HeroProps) {
           }}
         >
           <a
-            href={`mailto:${OWNER.email}?subject=Hire%20Inquiry&body=Hi%20Gbemisola%2C%20I%20came%20across%20your%20portfolio%20and%20I%27d%20love%20to%20discuss%20working%20together.`}
+            href={`mailto:${ownerEmail}?subject=Hire%20Inquiry&body=Hi%20Gbemisola%2C%20I%20came%20across%20your%20portfolio%20and%20I%27d%20love%20to%20discuss%20working%20together.`}
             className="pf-btn-primary rounded-full px-9 py-4 text-sm font-semibold tracking-wide"
           >
             Hire Me
           </a>
           <a
-            href={OWNER.resumeUrl}
+            href={resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="pf-btn-secondary rounded-full px-9 py-4 text-sm font-semibold tracking-wide"

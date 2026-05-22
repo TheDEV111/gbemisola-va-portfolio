@@ -7,8 +7,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Download, FlaskConical, MapPin, ShieldCheck } from "lucide-react";
 
-import { OWNER } from "../../data/content";
-
 const STATS = [
   { value: "B.Pharm", label: "Degree" },
   { value: "5+", label: "Years Clinical" },
@@ -16,7 +14,11 @@ const STATS = [
   { value: "100%", label: "Compliance" },
 ];
 
-export function ClinicalHero() {
+interface ClinicalHeroProps {
+  ownerEmail: string;
+}
+
+export function ClinicalHero({ ownerEmail }: ClinicalHeroProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -156,7 +158,7 @@ export function ClinicalHero() {
                 Download Clinical CV
               </a>
               <a
-                href={`mailto:${OWNER.email}?subject=Clinical%20Pharmacist%20Inquiry`}
+                href={`mailto:${ownerEmail}?subject=Clinical%20Pharmacist%20Inquiry`}
                 className="rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300"
                 style={{ background: "transparent", border: "1.5px solid rgba(3,105,161,0.35)", color: "#0369a1" }}
                 onMouseEnter={(e) => {
