@@ -2,8 +2,8 @@
 
 import { cn } from "@/shared/utils/cn";
 
-import { getIcon } from "../lib/icon-map";
 import { useInView } from "../hooks/use-in-view";
+import { getIcon } from "../lib/icon-map";
 
 import type { ServiceEntry } from "../types";
 

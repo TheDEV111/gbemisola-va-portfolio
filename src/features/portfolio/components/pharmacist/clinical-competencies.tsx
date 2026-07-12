@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 
-import { getIcon } from "../../lib/icon-map";
 import { useInView } from "../../hooks/use-in-view";
+import { getIcon } from "../../lib/icon-map";
 
 import type { PharmacistCompetencyEntry } from "../../types";
 
